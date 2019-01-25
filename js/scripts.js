@@ -22,12 +22,15 @@ function returnRange(num) {
   return range;
 }
 
-function beep(array) {
+function beepBoop(array) {
   var beepArray = [];
   for (var i = 0; i < array.length; i++) {
     var stringOfI = array[i].toString();
     var splitString = stringOfI.split('');
-    if (splitString.includes('1')) {
+    if (splitString.includes('2')) {
+      beepArray.push("Boop");
+      // console.log("Boop");
+    } else if (splitString.includes('1')) {
       beepArray.push("Beep");
       // console.log("Beep");
     } else {
@@ -36,7 +39,7 @@ function beep(array) {
     // console.log(stringOfI);
     // console.log(splitString);
   }
-  // console.log(beepArray);
+  console.log(beepArray);
   return beepArray;
 }
 
@@ -45,7 +48,7 @@ function beep(array) {
 
 $(function(){
   $("button").click(function() {
-    var result = beep(returnRange((parseInt($("#userNumber").val()))));
+    var result = beepBoop(returnRange((parseInt($("#userNumber").val()))));
     console.log(result);
     $("#result").text(result);
   });
