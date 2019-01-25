@@ -10,3 +10,11 @@ function returnRange(num) {
 }
 
 //UI Logic
+
+$(function(){
+  $("button").click(function() {
+    var result = returnRange(parseInt($("#userNumber").val()));
+    console.log(result);
+    $("#result").text(result);
+  });
+});
