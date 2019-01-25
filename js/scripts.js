@@ -1,19 +1,51 @@
 //Business Logic
 
+//Spec 1
+
+// function returnRange(num) {
+//   var range = [];
+//   for (var i = 0; i < num+1; i++) {
+//     range.push(" " + i + " ");
+//     // console.log(i);
+//   }
+//   return range;
+// }
+
+//Business Logic
+
 function returnRange(num) {
   var range = [];
   for (var i = 0; i < num+1; i++) {
     range.push(i);
-    // console.log(i);
+    console.log(range[i]);
   }
   return range;
 }
+
+function beep(array) {
+  var beepArray = [];
+  for (var i = 0; i < array.length; i++) {
+    var stringOfI = array[i].toString();
+    var splitString = stringOfI.split('');
+    if (splitString.includes('1')) {
+      beepArray.push("Beep");
+      // console.log("Beep");
+    } else {
+      beepArray.push(array[i]);
+    }
+    // console.log(stringOfI);
+    // console.log(splitString);
+  }
+  // console.log(beepArray);
+  return beepArray;
+}
+
 
 //UI Logic
 
 $(function(){
   $("button").click(function() {
-    var result = returnRange(parseInt($("#userNumber").val()));
+    var result = beep(returnRange((parseInt($("#userNumber").val()))));
     console.log(result);
     $("#result").text(result);
   });
